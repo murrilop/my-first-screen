@@ -1,16 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Digite o seu nome</Text>
-      <TextInput placeholder='nome' style={styles.textinp}/>
-      <Text>Digite o seu Email: </Text>
-      <TextInput placeholder='teste@gmail.com' style={styles.textinp}/>
-      <Text>Digite a sua senha</Text>
-      <TextInput placeholder='Digite sua senha' style={styles.textinp}/>
       <StatusBar style="auto" />
+
+      <Text>Digite seu nome</Text>
+      <TextInput placeholder='Nome' style={styles.textinp} />
+
+      <Text>Digite seu email</Text>
+      <TextInput placeholder='Email' style={styles.textinp} />
+
+      <Text>Digite sua senha</Text>
+      <TextInput placeholder='Senha' style={styles.textinp} secureTextEntry={true} />
+
+      <Text>Digite sua idade</Text>
+      <TextInput placeholder='Idade' style={styles.textinp} />
+
+      <TouchableOpacity activeOpacity={0.7} style={styles.button}>
+        <Text>Enviar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -18,22 +29,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#008B8B',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textinp:{
-    backgroundColor: '#4F4F4F',
+  textinp: {
+    backgroundColor: '#F8F8FF',
     width: 300,
-    height: 50,
-    borderRadius: 7,
+    height: 40,
+    borderRadius: 10,
+    marginBottom: 20,
   },
-  button:{
-    backgroundColor: '#DCDCDC',
+  button: {
+    backgroundColor: '#A9A9A9',
     padding: 15,
     borderRadius: 7,
     alignItems: 'center',
     marginTop: 20,
     width: 300,
-  }
+  },
 });
